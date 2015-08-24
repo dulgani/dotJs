@@ -1,16 +1,8 @@
 /* CSS configuration for dot element */
 
 .dot {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.25);
-    opacity: 0;
-
-    -webkit-animation: dot 3s;
-    animation:         dot 3s;
-
+    -webkit-animation: dot 0.7s;
+    animation:         dot 0.7s;
 }
 
 /* Keyframe for dot animation */

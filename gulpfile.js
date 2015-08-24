@@ -13,13 +13,13 @@ var dev = {
 };
 
 var dist = {
-    js : 'dist/js',
-    css: 'dist/css'
+    js : 'dist/js/',
+    css: 'dist/css/'
 };
 
 gulp.task('default', function () {
 
-    var jh = gulp.src(dev.js + '/*.js')
+    var jh = gulp.src(dev.js + '*.js')
         .pipe(jshint())
         .pipe(jshint.reporter(stylish))
         .pipe(gulp.dest(dist.js));
@@ -32,7 +32,7 @@ gulp.task('default', function () {
     var css = gulp.src(dev.css + '*.css')
         .pipe(gulp.dest(dist.css));
 
-    var min = gulp.src(dev.css + '/*.css')
+    var min = gulp.src(dev.css + '*.css')
         .pipe(minify())
         .pipe(rename('dot.min.css'))
         .pipe(gulp.dest(dist.css));
