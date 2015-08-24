@@ -1,0 +1,15 @@
+{
+  "name": "touch-point-javascript",
+  "version": "0.0.1",
+  "description": "Touch point visualisation for javascript",
+  "main": "",
+  "scripts": {},
+  "author": "cedric",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^1.11.2",
+    "jshint-stylish": "^2.0.1",
+    "merge-stream": "^1.0.0"
+  }
+}
