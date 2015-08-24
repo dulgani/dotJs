@@ -5,8 +5,14 @@
     var body = document.getElementById('body');
 
     // add Event Listener for click or touch the screen
-    body.addEventListener('touchstart', dotAnimation, false);
-    body.addEventListener('mousedown',dotAnimation, false);
+    // compatibility with IE8
+    if(body.attachEvent) {
+        body.attachEvent('ontouchstart', dotAnimation);
+        body.attachEvent('onmousedown', dotAnimation);
+    } else {
+        body.addEventListener('touchstart', dotAnimation, false);
+        body.addEventListener('mousedown', dotAnimation, false);
+    }
 
     // function who launch dot animation and create the dot element
     function dotAnimation() {
