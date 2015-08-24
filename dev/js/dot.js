@@ -1,14 +1,15 @@
 (function () {
 
     'use strict';
-
+    // get the body
     var body = document.getElementById('body');
 
-    body.addEventListener('touchstart', show, false);
-    body.addEventListener('mousedown',show, false);
+    // add Event Listener for click or touch the screen
+    body.addEventListener('touchstart', dotAnimation, false);
+    body.addEventListener('mousedown',dotAnimation, false);
 
-    function show() {
-
+    // function who launch dot animation and create the dot element
+    function dotAnimation() {
         var x = event.clientX;
         var y = event.clientY;
         var dot = document.createElement('div');
@@ -20,6 +21,7 @@
 
         document.body.appendChild(dot);
 
+        // timeout for destroy dot element and clean HTML DOM
         setTimeout( function() {
             try {
                 body.removeChild(dot);
@@ -29,5 +31,5 @@
         }, 3000 );
 
     }
-    
+
 })();
