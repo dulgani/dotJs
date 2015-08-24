@@ -12,30 +12,71 @@
     } else {
         body.addEventListener('touchstart', dotAnimation, false);
         body.addEventListener('mousedown', dotAnimation, false);
+        body.addEventListener('keydown', dotAnimationCtrl, false);
     }
 
     // function who launch dot animation and create the dot element
-    function dotAnimation() {
-        var x = event.clientX;
-        var y = event.clientY;
-        var dot = document.createElement('div');
+    function dotAnimation(event) {
+        try {
+            if(event.preventDefault()) {
+                event.preventDefault();
+            } else {
+                event.returnValue = false;
+            }
 
-        dot.id = 'dot';
-        dot.className = 'dot';
-        dot.style.left = (x  - 20 + 'px');
-        dot.style.top = (y - 20 + 'px');
+            var x = event.clientX;
+            var y = event.clientY;
+            var dot = document.createElement('div');
 
-        document.body.appendChild(dot);
+            dot.id = 'dot';
+            dot.className = 'dot';
+            dot.style.left = (x - 20 + 'px');
+            dot.style.top = (y - 20 + 'px');
+
+            document.body.appendChild(dot);
+        } catch (event) {
+            return false;
+        }
 
         // timeout for destroy dot element and clean HTML DOM
-        setTimeout( function() {
+        setTimeout(function() {
             try {
                 body.removeChild(dot);
-            } catch ( e ) {
+            } catch (event) {
                 return false;
             }
-        }, 3000 );
+        }, 3000);
 
+    }
+
+    // function for find a mousse in your screen
+    function dotAnimationCtrl(event) {
+        if(event.keyCode === 17) {
+            try {
+                if(event.preventDefault()) {
+                    event.preventDefault();
+                } else {
+                    event.returnValue = false;
+                }
+
+                var dot = document.createElement('div');
+
+                dot.id = 'dot';
+                dot.className = 'dot';
+
+                document.body.appendChild(dot);
+            } catch(event) {
+                return false;
+            }
+            // timeout for destroy dot element and clean HTML DOM
+            setTimeout(function () {
+                try {
+                    body.removeChild(dot);
+                } catch (event) {
+                    return false;
+                }
+            }, 3000);
+        }
     }
 
 })();
