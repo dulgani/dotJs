@@ -7,14 +7,12 @@ function isIE () {
 // initialize the object compatibility with IE
 function init(type, options)
 {
-    var body = document.getElementById('body');
-
-    if(body.attachEvent) {
-        body.attachEvent("on" + type, function () {
+    if(document.body.attachEvent) {
+        document.body.attachEvent("on" + type, function () {
             new Dot(options);
         });
     } else {
-        body.addEventListener(type, function () {
+        document.body.addEventListener(type, function () {
             new Dot(options);
         }, false);
     }
@@ -38,19 +36,12 @@ var Dot = function (options) {
     this.dotAnimation();
 };
 
-Dot.prototype.dotAnimation = function (event)
+Dot.prototype.dotAnimation = function ()
 {
     try {
-        if (event.preventDefault()) {
-            event.preventDefault();
-        } else {
-            event.returnValue = false;
-        }
-    } catch (event) {
-
         var dot = document.createElement(this.elem);
 
-        if(isIE() && isIE() < 9) {
+        if (isIE() && isIE() < 9) {
 
             dot.setAttribute('class', this.className);
             dot.setAttribute('id', this.id);
@@ -79,16 +70,16 @@ Dot.prototype.dotAnimation = function (event)
         }
 
         document.body.appendChild(dot);
+
+        setTimeout(function () {
+            try {
+                document.body.removeChild(dot);
+            } catch(event) {
+                return event + ' error setTimeOut';
+            }
+        }, 3000);
+
+    } catch(event) {
+        return event + ' error dotAnimation';
     }
-
-    setTimeout(function ()
-    {
-        try {
-            document.body.removeChild(dot);
-        } catch(event) {
-            return false;
-        }
-
-    }, 3000);
-
 };
