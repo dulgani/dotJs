@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Dotjs : gives visual feedback to click for web application prototype demonstration">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Dotjs</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/Defy-06/dotJs">View on GitHub</a>
+
+          <h1 id="project_title">Dotjs</h1>
+          <h2 id="project_tagline">gives visual feedback to click for web application prototype demonstration</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/Defy-06/dotJs/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/Defy-06/dotJs/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a id="un-besoin-un-object" class="anchor" href="#un-besoin-un-object" aria-hidden="true"><span class="octicon octicon-link"></span></a>Un besoin un object</h3>
+
+<p>Dans le cadre de mon travail j'ai eu récemment un petit soucie avec un client qui avait absolument besoin d'avoir un retour visuel sur les interactions dans son application mobile. Je me suis donc créé un petit objet JavaScript que j'ai tout simplement appelé Dot parce qu'il sert à faire des points (super l'originalité!!) </p>
+
+<h3>
+<a id="presentation" class="anchor" href="#presentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Presentation</h3>
+
+<p>Ce Dot permet d'avoir, à partir de n'importe quel événement que l'on souhaite, un retour visuel sous forme d'un cercle qui grandit (keyframe CSS avec du scale et de l'opacity) et qui finie par disparaitre. Cela permet d'avoir un retour visuel lors d'un click un touch, un keypress etc</p>
+
+<h3>
+<a id="utilisation" class="anchor" href="#utilisation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Utilisation</h3>
+
+<p>l'Utilisation est très simple, il suffit d'importer le fichier JS dans son code HTML et d'initialiser le Dot avec ce dont on a besoin comme paramètres de cette façon</p>
+
+<div class="highlight highlight-js"><pre>     <span class="pl-c1">init</span>(<span class="pl-s"><span class="pl-pds">'</span>non_event<span class="pl-pds">'</span></span>, {
+            id<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>dot<span class="pl-pds">'</span></span>,
+            className<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>dot<span class="pl-pds">'</span></span>,
+            elem<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>div<span class="pl-pds">'</span></span>,
+            position<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>absolute<span class="pl-pds">'</span></span>,
+            background<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>#FF0000<span class="pl-pds">'</span></span>,
+            width<span class="pl-k">:</span> <span class="pl-c1">20</span>,
+            height<span class="pl-k">:</span> <span class="pl-c1">20</span>,
+            radius<span class="pl-k">:</span> <span class="pl-c1">50</span>,
+            opacity<span class="pl-k">:</span> <span class="pl-c1">0</span>,
+        });</pre></div>
+
+<p>et c'est tout, dès que l'event ciblé est capturé, l'animation se déclenche et lance le retour visuel.</p>
+
+<h3>
+<a id="dans-un-avenir-incertain" class="anchor" href="#dans-un-avenir-incertain" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dans un avenir incertain</h3>
+
+<p>Je n'ai pas encore pensé à de futur amélioration de ce petit Dot mais je voulez le partager avec vous, si cela peut rendre service, comme cela me la fait à moi, je serais déjà content.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Dotjs maintained by <a href="https://github.com/Defy-06">Defy-06</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
